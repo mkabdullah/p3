@@ -18,3 +18,6 @@ Route::get('/', function () {
 
 Route::get('/lorem-ipsum', 'LoremIpsumController@index')->name('lorem-ipsum.index');
 Route::post('/lorem-ipsum/generate', 'LoremIpsumController@generate')->name('lorem-ipsum.generate');
+
+Route::get('/random-user', 'RandomUserController@index')->name('random-user.index');
+Route::post('/random-user/generate', 'RandomUserController@generate')->name('random-user.generate');
