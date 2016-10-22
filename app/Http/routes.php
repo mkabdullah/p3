@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('index');
-});
+    return view('prototype-helpers.index');
+})->name('prototype-helpers.index');
 
 
 Route::get('/lorem-ipsum', 'LoremIpsumController@index')->name('lorem-ipsum.index');

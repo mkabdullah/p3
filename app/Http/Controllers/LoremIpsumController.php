@@ -15,12 +15,14 @@ class LoremIpsumController extends Controller
      */
     public function index()
     {
-      $view  = '<form method="POST" action="/lorem-ipsum/generate">';
-      $view .= csrf_field(); # This will be explained more later
-      $view .= '<label>No of Paragraphs: <input type="text" name="no_of_paragraphs"></label>';
-      $view .= '<input type="submit">';
-      $view .= '</form>';
-      return $view;
+      // $view  = '<form method="POST" action="/lorem-ipsum/generate">';
+      // $view .= csrf_field(); # This will be explained more later
+      // $view .= '<label>No of Paragraphs: <input type="text" name="no_of_paragraphs"></label>';
+      // $view .= '<input type="submit">';
+      // $view .= '</form>';
+      // return $view;
+
+      return view('lorem-ipsum.index');
     }
 
     /**
@@ -34,7 +36,14 @@ class LoremIpsumController extends Controller
       $no_of_paragraphs = $request->input('no_of_paragraphs');
       $generator = new \Badcow\LoremIpsum\Generator();
       $paragraphs = $generator->getParagraphs($no_of_paragraphs);
-      echo implode('<p>', $paragraphs);
+
+      return view('lorem-ipsum.generate')->with('paragraphs', $paragraphs);
+
+      // foreach ($paragraphs as $paragraph)
+      // {
+      //     echo $paragraph.'<br>';
+      // }
+      //echo implode('<p>', $paragraphs);
     }
 
 
