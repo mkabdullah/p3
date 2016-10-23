@@ -9,93 +9,33 @@ use p3\Http\Requests;
 class RandomUserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display the index view.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+      #call the 'index' view
       return view('random-user.index');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Generate the result view.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function generate(Request $request)
     {
+      #input validation -- the input should be b/w 1 and 99
       $this->validate($request, ['no_of_users' => 'required|integer|between:1,99',]);
 
+      #extract the input value
       $no_of_users = $request->input('no_of_users');
+
+      #call the 'generate' view
       return view('random-user.generate')->with('no_of_users', $no_of_users);
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
