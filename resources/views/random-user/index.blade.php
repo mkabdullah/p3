@@ -1,18 +1,18 @@
 @extends('layouts.master')
 
 @section('title')
-  Prototype Helpers -- Lorem Ipsum Generator
+  Prototype Helpers -- Random User Generator
 @stop
 
 @section('content')
   <br><br>
   <div class="container">
 
-  <form method="POST" action="/lorem-ipsum/generate">
+  <form method="POST" action="/random-user/generate">
     {{ csrf_field() }}
 
-    <label for='no_of_paragraphs'>No. of Paragraphs</label>
-    <select name='no_of_paragraphs' id='no_of_paragraphs'>
+    <label for='no_of_users'>No. of Users</label>
+    <select name='no_of_users' id='no_of_users'>
       <?php
       for ($i=1; $i<=99; $i++)
       {
@@ -23,7 +23,7 @@
       ?>
     </select> (Max. 99)
     <br><br>
-    <input type="submit" value="Generate Text">
+    <input type="submit" value="Generate Users">
 
     <br><br>
   </form>

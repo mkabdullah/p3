@@ -10,8 +10,11 @@
 
 </head>
 <body>
-    <header align='center'>
-        <h1 class="header_footer"><a href="<?php echo route('prototype-helpers.index') ?>">Prototype Helpers</a></h1>
+    <header align='center' class='header'>
+        <a href="<?php echo route('prototype-helpers.index') ?>">
+        <h2>Prototype Helpers</h2>
+        <p>A web site for developers to generate userful stuff for prototyping<p>
+        </a>
     </header>
 
     <section>

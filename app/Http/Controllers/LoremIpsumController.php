@@ -33,6 +33,8 @@ class LoremIpsumController extends Controller
      */
     public function generate(Request $request)
     {
+      $this->validate($request, ['no_of_paragraphs' => 'required|integer|between:1,99',]);
+      
       $no_of_paragraphs = $request->input('no_of_paragraphs');
       $generator = new \Badcow\LoremIpsum\Generator();
       $paragraphs = $generator->getParagraphs($no_of_paragraphs);

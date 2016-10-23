@@ -15,12 +15,7 @@ class RandomUserController extends Controller
      */
     public function index()
     {
-      $view  = '<form method="POST" action="/random-user/generate">';
-      $view .= csrf_field(); # This will be explained more later
-      $view .= '<label>No of Users: <input type="text" name="no_of_users"></label>';
-      $view .= '<input type="submit">';
-      $view .= '</form>';
-      return $view;
+      return view('random-user.index');
     }
 
     /**
@@ -31,14 +26,10 @@ class RandomUserController extends Controller
      */
     public function generate(Request $request)
     {
+      $this->validate($request, ['no_of_users' => 'required|integer|between:1,99',]);
+
       $no_of_users = $request->input('no_of_users');
-      $faker = \Faker\Factory::create();
-      for ($i=0; $i < $no_of_users; $i++)
-      {
-        echo $faker->name.'<br>';
-        echo $faker->address.'<br>';
-        echo $faker->text.'<br>';
-      }
+      return view('random-user.generate')->with('no_of_users', $no_of_users);
 
     }
 
