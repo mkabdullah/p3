@@ -1,4 +1,4 @@
-# P3 -- Prototype Helpers
+# P3 -- Developer's Best Friend
 
 ## Lorem Ipsum and Random User Generators
 
