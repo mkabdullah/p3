@@ -12,7 +12,7 @@
 <body>
     <header align='center' class='header'>
         <a href="<?php echo route('prototype-helpers.index') ?>">
-        <h2>Prototype Helpers</h2>
+        <h2>Developer's Best Friend</h2>
         <p>A web site for developers to generate userful stuff for prototyping<p>
         </a>
     </header>

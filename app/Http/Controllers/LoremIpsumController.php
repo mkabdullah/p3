@@ -39,7 +39,7 @@ class LoremIpsumController extends Controller
       #generate the required number of paragraphs
       $paragraphs = $generator->getParagraphs($no_of_paragraphs);
 
-      #call the 'generate' view with the generated paragraphs
+      #call the 'generate' view with the generated paragraphs data
       return view('lorem-ipsum.generate')->with('paragraphs', $paragraphs);
     }
 

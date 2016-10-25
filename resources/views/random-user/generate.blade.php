@@ -11,7 +11,7 @@
   @endif
 
   <?php
-  $faker = \Faker\Factory::create();
+  #display the random user information for the specified no_of_users
   for ($i=0; $i < $no_of_users; $i++)
   {
     echo '<p>';

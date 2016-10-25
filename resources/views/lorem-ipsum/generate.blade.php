@@ -11,6 +11,7 @@
   @endif
 
   <?php
+  #display the generated paragphs
   foreach ($paragraphs as $paragraph)
   {
       echo '<p>'.$paragraph.'</p>';

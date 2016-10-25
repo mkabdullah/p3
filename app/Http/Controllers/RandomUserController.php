@@ -33,8 +33,11 @@ class RandomUserController extends Controller
       #extract the input value
       $no_of_users = $request->input('no_of_users');
 
-      #call the 'generate' view
-      return view('random-user.generate')->with('no_of_users', $no_of_users);
+      #instantiate faker user name generator from the external package
+      $faker = \Faker\Factory::create();
+
+      #call the 'generate' view with the random users data
+      return view('random-user.generate', compact('no_of_users', 'faker'));
 
     }
 
