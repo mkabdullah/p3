@@ -1,27 +1,39 @@
-# Laravel PHP Framework
+# P3 -- Developer's Best Friend
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Lorem Ipsum and Random User Generators
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Author: Muhammad Kaleem Abdullah
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Description
 
-## Official Documentation
+This is my third project (P3) for the course CSCI E-15 Dynamic Web Applications. The project provides the following functionality:
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+1. Provide two utilities, which generate dummy data that can be used for prototyping.
+2. The first utility is a 'Lorem Ipsum' text generator.
+3. The second utility is a random user generator.
+4. The Lorem Ipsum generator can generate up to 99 paragraphs of Lorem Ipsum text.
+5. the random user generator can generate up to 99 user names, along with addresses and emails.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## Program Logic
 
-## Security Vulnerabilities
+It is a Laravel framework based web side and it follows "separation of concerns" design principle. It has two controllers:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+1. LoremIpsumController.php
+                This controller has an index() method which redirects to the index view for Lorem Ipsum generator. The index view renders the form which takes a user's input for the number of paragraphs to generate. The index view extends a master layout (layouts.master) and supplies html FORM based contents for the master layout. The contoller also has a generate() method, which processes the FORM input from the index view. This method redirects to 'generate' view which displays the Lorem Ipsum text. To generate Lorem Ipsum paragraphs, I am using external [Lorem Ipsum generator package](https://github.com/Badcow/LoremIpsum). 
 
-## License
+2. RandomUserController.php
+                This controller has an index() method which redirects to the index view for random user generator. The index view renders the form which takes a user's input for the number of users to generate. The index view extends a master layout (layouts.master) and supplies html FORM based contents for the master layout. The contoller also has a generate() method, which processes the FORM input from the index view. This method redirects to 'generate' view which displays the generated random users. To generate random users, I am using external [random user generator package](https://github.com/fzaninotto/Faker). 
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+## Where is it?
+
+Project [Link](http://p3.kaleemabdullah.com).
+Project code is available at [Github](https://github.com/mkabdullah/p3)
+
+## Project Demo
+
+The project demo video is hosted [here](https://www.youtube.com/watch?v=ew35gokDavI)
+
+## Credits
+The project uses two external packages: [Lorem Ipsum Generator](https://github.com/Badcow/LoremIpsum) and [Random User Generator](https://github.com/fzaninotto/Faker)
