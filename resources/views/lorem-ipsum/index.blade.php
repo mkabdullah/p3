@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  Prototype Helpers -- Lorem Ipsum Generator
+  Developer's Best Friend -- Lorem Ipsum Generator
 @stop
 
 @section('content')

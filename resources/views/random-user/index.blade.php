@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  Prototype Helpers -- Random User Generator
+  Developer's Best Friend -- Random User Generator
 @stop
 
 @section('content')
