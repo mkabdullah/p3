@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  Prototype Helpers
+  Developer's Best Friend
 @stop
 
 @section('content')
